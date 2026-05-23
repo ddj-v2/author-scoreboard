@@ -8,6 +8,10 @@
     <div class="section"> -->
       <div class="section__body no-padding" id="ranking_author">
         <div data-fragment-id="ranking_author">
+          <style>
+            .row--me { background: #f8fbff; }
+            .label--you { font-size: 0.85em; color: #0366d6; margin-left: 6px; }
+          </style>
           {% if not authorRows.length %}
             {{ nothing.render('No users have created any visible problems in this domain yet.') }}
           {% else %}
@@ -20,7 +24,7 @@
             </colgroup>
             <thead>
               <tr>
-                <th class="col--rank">{{ _('Rank') }}</th>
+                <th class="col--rank">{{ _('author_ranking') }}</th>
                 <th class="col--user">{{ _('Username') }}</th>
                 <th class="col--rp">{{ _('Problems Created') }}</th>
                 <th class="col--bio">{{ _('Bio') }}</th>
@@ -28,17 +32,17 @@
             </thead>
             <tbody>
               {% if currentUserAuthorStats %}
-              <tr>
+              <tr class="row--me">
                 <td class="col--rank">{{ currentUserAuthorStats.rank }}</td>
-                <td class="col--user">{{ userComponent.render_inline(currentUserAuthorStats) }}</td>
+                <td class="col--user">{{ userComponent.render_inline(currentUserAuthorStats) }} <span class="label--you">({{ _('You') }})</span></td>
                 <td class="col--rp">{{ currentUserAuthorStats.problemCount }}</td>
                 <td class="col--bio">{{ currentUserAuthorStats.bio|default('')|truncate(64, true)|markdownInline|safe }}</td>
               </tr>
               {% endif %}
               {%- for udoc in authorRows -%}
-              <tr>
+              <tr{% if udoc._id == handler.user._id %} class="row--me"{% endif %}>
                 <td class="col--rank">{{ (page - 1) * pageSize + loop.index }}</td>
-                <td class="col--user">{{ userComponent.render_inline(udoc) }}</td>
+                <td class="col--user">{{ userComponent.render_inline(udoc) }}{% if udoc._id == handler.user._id %} <span class="label--you">({{ _('You') }})</span>{% endif %}</td>
                 <td class="col--rp">{{ udoc.problemCount }}</td>
                 <td class="col--bio">{{ udoc.bio|default('')|truncate(64, true)|markdownInline|safe }}</td>
               </tr>
