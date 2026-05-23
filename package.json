@@ -1,5 +1,5 @@
 {
-  "name": "author-scoreboard",
+  "name": "@ddj-v2/author-scoreboard",
   "version": "1.0.0",
   "description": "HydroOJ plugin for per-domain author rankings and created problem lists.",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bryan0324/author-scoreboard.git"
+    "url": "git+https://github.com/ddj-v2/author-scoreboard.git"
   },
   "keywords": [
     "hydrooj",
@@ -26,10 +26,15 @@
     "README.md"
   ],
   "devDependencies": {
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/github": "^12.0.8",
+    "@semantic-release/npm": "^13.1.5",
+    "@semantic-release/release-notes-generator": "^14.1.1",
+    "semantic-release": "^25.0.3",
     "typescript": "^6.0.3"
   },
   "bugs": {
-    "url": "https://github.com/Bryan0324/author-scoreboard/issues"
+    "url": "https://github.com/ddj-v2/author-scoreboard/issues"
   },
-  "homepage": "https://github.com/Bryan0324/author-scoreboard#readme"
+  "homepage": "https://github.com/ddj-v2/author-scoreboard#readme"
 }

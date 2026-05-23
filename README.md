@@ -1,4 +1,4 @@
-# author-scoreboard
+# @ddj-v2/author-scoreboard
 
 HydroOJ plugin that adds:
 
