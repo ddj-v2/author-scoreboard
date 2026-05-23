@@ -165,6 +165,13 @@ function loadI18n(ctx: Context) {
     'This user has not created any problems in this domain yet.': '该用户尚未在当前域创建题目。',
     'No users have created any visible problems in this domain yet.': '当前域暂无可见的创题记录。',
   });
+  ctx.i18n.load('zh_TW', {
+    author_ranking: '創題排名',
+    'Created Problems': '創建的題目',
+    'Problems Created': '創題數',
+    'This user has not created any problems in this domain yet.': '該用戶尚未在當前域創建題目。',
+    'No users have created any visible problems in this domain yet.': '當前域暫無可見的創題記錄。',
+  });
 }
 
 async function apply(ctx: Context) {
